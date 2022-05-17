@@ -49,7 +49,6 @@ int main()
     printf("Select option you want to do: ");
     scanf("%d",&a);
     printf("\n**************************\n");
-
     switch(a)
     {
         case 1:
@@ -166,7 +165,7 @@ void best(void)
     p=head;
     std *q;
     q=(std *)malloc(sizeof(std));
-    while(p!=NULL)
+    while(p)
     {
         if((((p->final*60)/100)+((p->midterm*40)/100))>max)
         q=p;
@@ -192,7 +191,7 @@ void delete(void)
         if(p->number==n)
         {
             head=p->next;
-            p=NULL;
+            free(p);
         }
     else
     {
